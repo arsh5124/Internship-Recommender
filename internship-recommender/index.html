@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI-Powered Internship Recommendation Engine | SIH 2025</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="#" onclick="showSection('home')">
+                <i class="fas fa-brain me-2"></i>AI Internship Engine
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" onclick="showSection('home')">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" onclick="showSection('student-selection')">Find Students</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" onclick="showSection('all-internships')">Internships</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" onclick="showSection('about')">About</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Home Section -->
+    <section id="home" class="section active">
+        <!-- Hero Section -->
+        <div class="hero-section">
+            <div class="container">
+                <div class="row align-items-center min-vh-100 py-5">
+                    <div class="col-lg-6">
+                        <h1 class="display-4 fw-bold mb-4">AI-Powered Internship Recommendation Engine</h1>
+                        <p class="lead mb-4">Revolutionary AI system built for students that matches them with perfect internship opportunities using advanced machine learning algorithms.</p>
+                        <div class="d-flex gap-3 mb-4">
+                            <button class="btn btn-primary btn-lg" onclick="showSection('student-selection')">
+                                <i class="fas fa-rocket me-2"></i>Get Started
+                            </button>
+                            <button class="btn btn-outline-light btn-lg" onclick="showSection('about')">
+                                Learn More
+                            </button>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="text-center">
+                            <img src="https://ppl-ai-code-interpreter-files.s3.amazonaws.com/web/direct-files/48830113e49984a8c950b4cec210eab4/380c09aa-724e-4e4e-b4a4-3ce78429c0b8/77184a4d.png" 
+                                 alt="AI Recommendation Architecture" class="img-fluid rounded shadow">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Stats Section -->
+        <div class="stats-section py-5">
+            <div class="container">
+                <div class="row g-4">
+                    <div class="col-md-3">
+                        <div class="stat-card text-center">
+                            <div class="stat-icon mb-3">
+                                <i class="fas fa-users"></i>
+                            </div>
+                            <h3 class="stat-number">100</h3>
+                            <p class="stat-label">Total Students</p>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="stat-card text-center">
+                            <div class="stat-icon mb-3">
+                                <i class="fas fa-briefcase"></i>
+                            </div>
+                            <h3 class="stat-number">50</h3>
+                            <p class="stat-label">Internships Available</p>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="stat-card text-center">
+                            <div class="stat-icon mb-3">
+                                <i class="fas fa-handshake"></i>
+                            </div>
+                            <h3 class="stat-number">1250+</h3>
+                            <p class="stat-label">Successful Matches</p>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="stat-card text-center">
+                            <div class="stat-icon mb-3">
+                                <i class="fas fa-building"></i>
+                            </div>
+                            <h3 class="stat-number">25</h3>
+                            <p class="stat-label">Active Companies</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Features Section -->
+        <div class="features-section py-5">
+            <div class="container">
+                <div class="text-center mb-5">
+                    <h2 class="display-5 fw-bold">Key Features</h2>
+                    <p class="lead text-muted">Advanced AI technology for perfect internship matching</p>
+                </div>
+                <div class="row g-4">
+                    <div class="col-md-4">
+                        <div class="feature-card h-100">
+                            <div class="feature-icon mb-3">
+                                <i class="fas fa-robot"></i>
+                            </div>
+                            <h4>AI-Powered Matching</h4>
+                            <p>Advanced machine learning algorithms analyze skills, preferences, and career goals to find perfect internship matches.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="feature-card h-100">
+                            <div class="feature-icon mb-3">
+                                <i class="fas fa-chart-line"></i>
+                            </div>
+                            <h4>Skill Gap Analysis</h4>
+                            <p>Identify missing skills and get personalized learning recommendations to bridge the gap between current and required skills.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="feature-card h-100">
+                            <div class="feature-icon mb-3">
+                                <i class="fas fa-lightbulb"></i>
+                            </div>
+                            <h4>Explainable Recommendations</h4>
+                            <p>Transparent AI decisions with detailed explanations of why specific internships are recommended for each student.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Student Selection Section -->
+    <section id="student-selection" class="section">
+        <div class="container py-5">
+            <div class="text-center mb-5">
+                <h2 class="display-5 fw-bold">Select a Student Profile</h2>
+                <p class="lead text-muted">Choose a student to see personalized internship recommendations</p>
+            </div>
+
+            <!-- Quick Select Dropdown -->
+            <div class="row justify-content-center mb-5">
+                <div class="col-md-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title mb-3">Quick Select</h5>
+                            <select class="form-select" id="studentSelect" onchange="selectStudent(this.value)">
+                                <option value="">Choose a student...</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Student Cards -->
+            <div class="row g-4" id="studentCards">
+                <!-- Student cards will be populated by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Student Dashboard Section -->
+    <section id="student-dashboard" class="section">
+        <div class="container py-5">
+            <!-- Student Profile Header -->
+            <div class="row mb-4">
+                <div class="col">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="row align-items-center">
+                                <div class="col-md-8">
+                                    <h2 id="studentName" class="mb-1"></h2>
+                                    <p class="text-muted mb-2">
+                                        <i class="fas fa-university me-2"></i><span id="studentUniversity"></span> |
+                                        <i class="fas fa-graduation-cap me-2"></i><span id="studentDomain"></span> |
+                                        <i class="fas fa-star me-2"></i>CGPA: <span id="studentCgpa"></span>
+                                    </p>
+                                    <div id="studentSkills" class="skill-badges">
+                                        <!-- Skills will be populated by JavaScript -->
+                                    </div>
+                                </div>
+                                <div class="col-md-4 text-end">
+                                    <span class="badge bg-success fs-6" id="studentLevel"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Recommended Internships -->
+            <div class="mb-4">
+                <h3>Recommended Internships</h3>
+                <div class="row g-4" id="recommendationsContainer">
+                    <!-- Recommendations will be populated by JavaScript -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Internship Details Section -->
+    <section id="internship-details" class="section">
+        <div class="container py-5">
+            <button class="btn btn-outline-secondary mb-4" onclick="goBackToDashboard()">
+                <i class="fas fa-arrow-left me-2"></i>Back to Dashboard
+            </button>
+            
+            <div class="row">
+                <div class="col-lg-8">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between align-items-start mb-3">
+                                <div>
+                                    <h2 id="internshipTitle" class="mb-1"></h2>
+                                    <p class="text-primary fw-bold mb-0" id="internshipCompany"></p>
+                                </div>
+                                <span class="badge bg-success fs-6" id="internshipMatch"></span>
+                            </div>
+                            
+                            <div class="row mb-4">
+                                <div class="col-sm-6">
+                                    <p class="mb-1"><i class="fas fa-map-marker-alt me-2 text-muted"></i><strong>Location:</strong> <span id="internshipLocation"></span></p>
+                                    <p class="mb-1"><i class="fas fa-clock me-2 text-muted"></i><strong>Duration:</strong> <span id="internshipDuration"></span></p>
+                                </div>
+                                <div class="col-sm-6">
+                                    <p class="mb-1"><i class="fas fa-rupee-sign me-2 text-muted"></i><strong>Stipend:</strong> ₹<span id="internshipStipend"></span>/month</p>
+                                    <p class="mb-1"><i class="fas fa-graduation-cap me-2 text-muted"></i><strong>Min CGPA:</strong> <span id="internshipMinCgpa"></span></p>
+                                </div>
+                            </div>
+
+                            <h5>Job Description</h5>
+                            <p id="internshipDescription" class="mb-4"></p>
+
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <h6>Required Skills</h6>
+                                    <div id="requiredSkills" class="skill-badges mb-3"></div>
+                                </div>
+                                <div class="col-md-6">
+                                    <h6>Preferred Skills</h6>
+                                    <div id="preferredSkills" class="skill-badges mb-3"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5>Match Analysis</h5>
+                            <p id="matchReason" class="text-muted mb-3"></p>
+                            
+                            <div class="mb-3">
+                                <h6 class="text-success">Matching Skills</h6>
+                                <div id="matchingSkills" class="skill-badges mb-3"></div>
+                            </div>
+                            
+                            <div class="mb-4">
+                                <h6 class="text-warning">Skills to Learn</h6>
+                                <div id="missingSkills" class="skill-badges mb-3"></div>
+                            </div>
+                            
+                            <div class="d-grid gap-2">
+                                <button class="btn btn-primary">
+                                    <i class="fas fa-paper-plane me-2"></i>Apply Now
+                                </button>
+                                <button class="btn btn-outline-primary" onclick="showSkillGap()">
+                                    <i class="fas fa-chart-bar me-2"></i>Skill Gap Analysis
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skill Gap Analysis Section -->
+    <section id="skill-gap" class="section">
+        <div class="container py-5">
+            <button class="btn btn-outline-secondary mb-4" onclick="goBackToDetails()">
+                <i class="fas fa-arrow-left me-2"></i>Back to Details
+            </button>
+            
+            <div class="text-center mb-5">
+                <h2 class="display-6 fw-bold">Skill Gap Analysis</h2>
+                <p class="lead text-muted">Understand your skill alignment and learning opportunities</p>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-lg-6">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="text-success mb-3">
+                                <i class="fas fa-check-circle me-2"></i>Skills You Have
+                            </h5>
+                            <div id="skillsYouHave" class="skill-badges">
+                                <!-- Populated by JavaScript -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-6">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="text-warning mb-3">
+                                <i class="fas fa-exclamation-triangle me-2"></i>Skills to Learn
+                            </h5>
+                            <div id="skillsToLearn" class="skill-badges mb-3">
+                                <!-- Populated by JavaScript -->
+                            </div>
+                            
+                            <h6 class="mt-4">Learning Recommendations</h6>
+                            <div class="learning-recommendations">
+                                <div class="recommendation-item">
+                                    <i class="fas fa-book text-primary me-2"></i>
+                                    <small>Take online courses on platforms like Coursera or Udemy</small>
+                                </div>
+                                <div class="recommendation-item">
+                                    <i class="fas fa-code text-primary me-2"></i>
+                                    <small>Practice coding challenges on LeetCode or HackerRank</small>
+                                </div>
+                                <div class="recommendation-item">
+                                    <i class="fas fa-project-diagram text-primary me-2"></i>
+                                    <small>Build personal projects to demonstrate skills</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Match Progress -->
+            <div class="card mt-4">
+                <div class="card-body">
+                    <h5>Skill Match Progress</h5>
+                    <div class="progress mb-2" style="height: 30px;">
+                        <div id="skillMatchProgress" class="progress-bar bg-success" role="progressbar" style="width: 0%">
+                            <span class="fw-bold"></span>
+                        </div>
+                    </div>
+                    <p class="text-muted mb-0">Complete the missing skills to improve your match score!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- All Internships Section -->
+    <section id="all-internships" class="section">
+        <div class="container py-5">
+            <div class="text-center mb-5">
+                <h2 class="display-5 fw-bold">Available Internships</h2>
+                <p class="lead text-muted">Explore all internship opportunities</p>
+            </div>
+            
+            <div class="row g-4" id="allInternshipsContainer">
+                <!-- Internships will be populated by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section">
+        <div class="container py-5">
+            <div class="text-center mb-5">
+                <h2 class="display-5 fw-bold">About the Project</h2>
+                <p class="lead text-muted">Smart India Hackathon 2025 </p>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-lg-8">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h4>Problem Statement</h4>
+                            <p class="mb-4">Traditional internship matching systems lack precision and fail to provide personalized recommendations. Students often struggle to find relevant opportunities that align with their skills and career goals, while companies face challenges in identifying the right candidates.</p>
+                            
+                            <h4>Our Solution</h4>
+                            <p class="mb-4">We developed an AI-powered recommendation engine that leverages advanced machine learning algorithms to create precise student-internship matches. Our system uses:</p>
+                            
+                            <ul class="list-group list-group-flush mb-4">
+                                <li class="list-group-item"><i class="fas fa-check text-success me-2"></i><strong>Hybrid Filtering:</strong> Combines collaborative and content-based filtering</li>
+                                <li class="list-group-item"><i class="fas fa-check text-success me-2"></i><strong>NLP Processing:</strong> Analyzes job descriptions and student profiles</li>
+                                <li class="list-group-item"><i class="fas fa-check text-success me-2"></i><strong>Explainable AI:</strong> Provides transparent reasoning for recommendations</li>
+                                <li class="list-group-item"><i class="fas fa-check text-success me-2"></i><strong>Skill Gap Analysis:</strong> Identifies learning opportunities</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4">
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <h5>Technology Stack</h5>
+                            <div class="tech-stack">
+                                <span class="badge bg-primary me-2 mb-2">Python</span>
+                                <span class="badge bg-primary me-2 mb-2">Scikit-learn</span>
+                                <span class="badge bg-primary me-2 mb-2">TensorFlow</span>
+                                <span class="badge bg-primary me-2 mb-2">Flask</span>
+                                <span class="badge bg-primary me-2 mb-2">JavaScript</span>
+                                <span class="badge bg-primary me-2 mb-2">Bootstrap</span>
+                                <span class="badge bg-primary me-2 mb-2">HTML/CSS</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <div class="card-body">
+                            <h5>Team TechNoob</h5>
+                            <p class="text-muted">SIH 2025 Participants</p>
+                            <div class="team-members">
+                                <div class="member mb-2">
+                                    <i class="fas fa-user text-primary me-2"></i>
+                                    <span>Harsh Vardhan Singh</span>
+                                </div>
+                                <div class="member mb-2">
+                                    <i class="fas fa-user text-primary me-2"></i>
+                                    <span>Mohammad Arsh</span>
+                                </div>
+                                <div class="member mb-2">
+                                    <i class="fas fa-user text-primary me-2"></i>
+                                    <span>Ronak Singh</span>
+                                </div>
+                                <div class="member mb-2">
+                                    <i class="fas fa-user text-primary me-2"></i>
+                                    <span>Ankit Kumar Soni</span>
+                                </div>
+                                <div class="member mb-2">
+                                    <i class="fas fa-user text-primary me-2"></i>
+                                    <span>Nisha</span>
+                                </div>
+                                <div class="member mb-2">
+                                    <i class="fas fa-user text-primary me-2"></i>
+                                    <span>Ashish Dhaka</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>

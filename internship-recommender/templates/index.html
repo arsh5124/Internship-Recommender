@@ -1,0 +1,95 @@
+
+{% extends "base.html" %}
+
+{% block content %}
+<!-- Hero Section -->
+<div class="hero-section text-center">
+    <div class="container">
+        <h1 class="display-4 fw-bold mb-4">
+            <i class="fas fa-robot me-3"></i>
+            AI-Powered Internship Matching
+        </h1>
+        <p class="lead mb-4">
+            Discover the perfect internship opportunities tailored to your skills and aspirations using advanced AI algorithms.
+        </p>
+        <a href="/student-login" class="btn btn-light btn-lg">
+            <i class="fas fa-rocket me-2"></i>
+            Get Started
+        </a>
+    </div>
+</div>
+
+<!-- Statistics Section -->
+<div class="container my-5">
+    <div class="row g-4">
+        <div class="col-md-4">
+            <div class="card stats-card text-center p-4">
+                <i class="fas fa-users fa-3x mb-3"></i>
+                <h3>{{ stats.total_students }}</h3>
+                <p class="mb-0">Active Students</p>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card stats-card text-center p-4">
+                <i class="fas fa-briefcase fa-3x mb-3"></i>
+                <h3>{{ stats.total_internships }}</h3>
+                <p class="mb-0">Available Internships</p>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card stats-card text-center p-4">
+                <i class="fas fa-handshake fa-3x mb-3"></i>
+                <h3>{{ stats.active_recommendations }}</h3>
+                <p class="mb-0">Successful Matches</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Features Section -->
+<div class="container my-5">
+    <div class="row text-center mb-5">
+        <div class="col">
+            <h2 class="fw-bold">How It Works</h2>
+            <p class="text-muted">Our AI-powered system uses advanced algorithms to match you with the perfect internship</p>
+        </div>
+    </div>
+
+    <div class="row g-4">
+        <div class="col-md-4 text-center">
+            <div class="feature-icon mx-auto">
+                <i class="fas fa-user-graduate"></i>
+            </div>
+            <h4>Profile Analysis</h4>
+            <p class="text-muted">Our system analyzes your skills, experience, and preferences to understand your profile.</p>
+        </div>
+
+        <div class="col-md-4 text-center">
+            <div class="feature-icon mx-auto">
+                <i class="fas fa-search"></i>
+            </div>
+            <h4>Smart Matching</h4>
+            <p class="text-muted">Advanced algorithms match your profile with suitable internship opportunities.</p>
+        </div>
+
+        <div class="col-md-4 text-center">
+            <div class="feature-icon mx-auto">
+                <i class="fas fa-chart-line"></i>
+            </div>
+            <h4>Skill Gap Analysis</h4>
+            <p class="text-muted">Get insights on skills to develop for your desired internship positions.</p>
+        </div>
+    </div>
+</div>
+
+<!-- Call to Action -->
+<div class="container my-5">
+    <div class="card bg-primary text-white text-center p-5">
+        <h3 class="fw-bold mb-3">Ready to Find Your Dream Internship?</h3>
+        <p class="lead mb-4">Join thousands of students who have found their perfect internship match</p>
+        <a href="/student-login" class="btn btn-light btn-lg">
+            Start Your Journey
+        </a>
+    </div>
+</div>
+{% endblock %}

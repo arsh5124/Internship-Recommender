@@ -1,0 +1,156 @@
+
+{% extends "base.html" %}
+
+{% block title %}Skill Gap Analysis - {{ student.name }}{% endblock %}
+
+{% block content %}
+<div class="container my-4">
+    <div class="row justify-content-center">
+        <div class="col-md-10">
+            <!-- Header -->
+            <div class="card mb-4">
+                <div class="card-body text-center">
+                    <h2>
+                        <i class="fas fa-chart-line text-primary me-2"></i>
+                        Skill Gap Analysis
+                    </h2>
+                    <p class="text-muted">
+                        Analysis for <strong>{{ student.name }}</strong> applying to 
+                        <strong>{{ internship.title }}</strong> at <strong>{{ internship.company }}</strong>
+                    </p>
+                </div>
+            </div>
+
+            <!-- Match Overview -->
+            <div class="row mb-4">
+                <div class="col-md-4">
+                    <div class="card text-center h-100">
+                        <div class="card-body">
+                            <div class="display-4 text-success mb-2">
+                                {{ analysis.skill_match_percentage|round(0) }}%
+                            </div>
+                            <h6>Skill Match</h6>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card text-center h-100">
+                        <div class="card-body">
+                            <div class="display-4 text-primary mb-2">
+                                {{ analysis.matching_skills|length }}
+                            </div>
+                            <h6>Skills You Have</h6>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card text-center h-100">
+                        <div class="card-body">
+                            <div class="display-4 text-warning mb-2">
+                                {{ analysis.missing_required_skills|length }}
+                            </div>
+                            <h6>Skills to Learn</h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Detailed Analysis -->
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="card h-100">
+                        <div class="card-header bg-success text-white">
+                            <h5 class="mb-0">
+                                <i class="fas fa-check-circle me-2"></i>
+                                Skills You Already Have
+                            </h5>
+                        </div>
+                        <div class="card-body">
+                            {% if analysis.matching_skills %}
+                                {% for skill in analysis.matching_skills %}
+                                    <span class="badge bg-success me-2 mb-2">
+                                        <i class="fas fa-check me-1"></i>{{ skill }}
+                                    </span>
+                                {% endfor %}
+                            {% else %}
+                                <p class="text-muted">No matching skills found. Consider developing the required skills.</p>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="card h-100">
+                        <div class="card-header bg-warning text-white">
+                            <h5 class="mb-0">
+                                <i class="fas fa-exclamation-triangle me-2"></i>
+                                Skills You Need to Learn
+                            </h5>
+                        </div>
+                        <div class="card-body">
+                            {% if analysis.missing_required_skills %}
+                                {% for skill in analysis.missing_required_skills %}
+                                    <span class="badge bg-warning me-2 mb-2">
+                                        <i class="fas fa-plus me-1"></i>{{ skill }}
+                                    </span>
+                                {% endfor %}
+
+                                <div class="mt-3">
+                                    <h6>Learning Recommendations:</h6>
+                                    <ul class="small">
+                                        {% for skill in analysis.missing_required_skills[:3] %}
+                                        <li>Consider taking online courses in {{ skill }}</li>
+                                        {% endfor %}
+                                    </ul>
+                                </div>
+                            {% else %}
+                                <p class="text-success">
+                                    <i class="fas fa-trophy me-2"></i>
+                                    Congratulations! You have all the required skills.
+                                </p>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Recommendations -->
+            <div class="card mt-4">
+                <div class="card-header">
+                    <h5>
+                        <i class="fas fa-lightbulb text-warning me-2"></i>
+                        Our Recommendations
+                    </h5>
+                </div>
+                <div class="card-body">
+                    {% if analysis.skill_match_percentage >= 70 %}
+                        <div class="alert alert-success">
+                            <h6>Excellent Match! 🎉</h6>
+                            <p>You have most of the required skills. We strongly recommend applying for this internship.</p>
+                        </div>
+                    {% elif analysis.skill_match_percentage >= 40 %}
+                        <div class="alert alert-warning">
+                            <h6>Good Potential 💪</h6>
+                            <p>You have some of the required skills. Consider learning the missing skills and then apply.</p>
+                        </div>
+                    {% else %}
+                        <div class="alert alert-info">
+                            <h6>Growth Opportunity 📚</h6>
+                            <p>This internship requires skills you don't have yet. Use it as a learning goal!</p>
+                        </div>
+                    {% endif %}
+
+                    <div class="mt-3">
+                        <a href="/dashboard/{{ student.student_id }}" class="btn btn-primary me-2">
+                            <i class="fas fa-arrow-left me-1"></i>Back to Dashboard
+                        </a>
+                        <a href="/internship/{{ internship.internship_id }}" class="btn btn-outline-primary">
+                            <i class="fas fa-eye me-1"></i>View Internship Details
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

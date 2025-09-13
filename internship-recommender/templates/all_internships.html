@@ -1,0 +1,109 @@
+
+{% extends "base.html" %}
+
+{% block title %}Browse All Internships{% endblock %}
+
+{% block content %}
+<div class="container my-4">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h2>
+            <i class="fas fa-briefcase text-primary me-2"></i>
+            All Available Internships
+        </h2>
+        <span class="badge bg-info fs-6">{{ internships|length }} internships available</span>
+    </div>
+
+    <!-- Filters (Future Enhancement) -->
+    <div class="card mb-4">
+        <div class="card-body">
+            <div class="row g-3">
+                <div class="col-md-3">
+                    <label class="form-label">Filter by Domain:</label>
+                    <select class="form-select" id="domainFilter">
+                        <option value="">All Domains</option>
+                        <option value="Computer Science">Computer Science</option>
+                        <option value="Data Science">Data Science</option>
+                        <option value="AI/ML">AI/ML</option>
+                    </select>
+                </div>
+                <div class="col-md-3">
+                    <label class="form-label">Filter by Location:</label>
+                    <select class="form-select" id="locationFilter">
+                        <option value="">All Locations</option>
+                        <option value="Remote">Remote</option>
+                        <option value="Mumbai">Mumbai</option>
+                        <option value="Bangalore">Bangalore</option>
+                        <option value="Delhi">Delhi</option>
+                    </select>
+                </div>
+                <div class="col-md-3">
+                    <label class="form-label">Min Stipend:</label>
+                    <select class="form-select" id="stipendFilter">
+                        <option value="">Any Stipend</option>
+                        <option value="10000">₹10,000+</option>
+                        <option value="15000">₹15,000+</option>
+                        <option value="20000">₹20,000+</option>
+                    </select>
+                </div>
+                <div class="col-md-3 d-flex align-items-end">
+                    <button class="btn btn-outline-primary w-100">
+                        <i class="fas fa-filter me-2"></i>Apply Filters
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Internships Grid -->
+    <div class="row g-4">
+        {% for internship in internships %}
+        <div class="col-md-6 col-lg-4">
+            <div class="card h-100">
+                <div class="card-header">
+                    <h6 class="card-title mb-1">{{ internship.title }}</h6>
+                    <small class="text-muted">{{ internship.company }}</small>
+                </div>
+                <div class="card-body">
+                    <div class="mb-3">
+                        <div class="row text-center">
+                            <div class="col-6">
+                                <small class="text-muted">Stipend</small><br>
+                                <strong class="text-success">₹{{ internship.stipend }}</strong>
+                            </div>
+                            <div class="col-6">
+                                <small class="text-muted">Duration</small><br>
+                                <strong>{{ internship.duration }}</strong>
+                            </div>
+                        </div>
+                    </div>
+
+                    <p class="card-text small">{{ internship.description[:100] }}...</p>
+
+                    <div class="mb-3">
+                        <small class="text-muted">Key Skills:</small><br>
+                        {% for skill in internship.required_skills[:3] %}
+                            <span class="skill-badge small">{{ skill }}</span>
+                        {% endfor %}
+                    </div>
+
+                    <div class="mb-2">
+                        <small>
+                            <i class="fas fa-map-marker-alt text-primary me-1"></i>{{ internship.location }}
+                            <i class="fas fa-graduation-cap text-primary ms-2 me-1"></i>{{ internship.min_cgpa }}+ CGPA
+                        </small>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <div class="d-flex justify-content-between">
+                        <a href="/internship/{{ internship.internship_id }}" class="btn btn-primary btn-sm">
+                            View Details
+                        </a>
+                        <small class="text-muted align-self-center">{{ internship.domain }}</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
